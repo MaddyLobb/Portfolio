@@ -1,0 +1,24 @@
+/* =============
+    Typography
+============= */
+@font-face{
+    font-family: 'Sonder-Medium';
+    src:url(Fonts/Sonder-Medium.woff), format('woff');
+    font-weight: medium;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+
+    h1,h2,h3,h4{
+        margin: 0;
+        padding: 0;
+    }
+    
+    p{
+        margin: 0;
+        padding: 0;
+    }
+    
+}
+

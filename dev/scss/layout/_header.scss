@@ -1,0 +1,140 @@
+/* =============
+    Header
+============= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    #full-nav {
+        display: grid;
+        grid-template-areas: 
+        ". burger"
+        "nav nav";
+        grid-template-columns: 20% auto;
+
+        @include md {
+            grid-template-areas: "nav";
+            grid-template-columns:  auto ;
+        }
+
+        #burger-container {
+            justify-content: flex-end;
+            display: flex;
+            grid-area: burger;
+            padding: 30px;
+            position: relative;
+
+            @include md {
+                display: none !important;
+            }
+
+            #burger{
+                position: absolute;
+                z-index: 500;
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        #mobile-nav-container {
+            // background-color: var(--black);
+            // grid-area: nav;
+            // position: fixed;
+            // width: 100vw;
+            // height: 100vh;
+            z-index: 100;
+
+            @include md {
+                background-color: rgba(0, 0, 0, 0.4);
+                position: static;
+                height: 80px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+//*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    left: 0px;
+  
+    em {
+      margin-left: 10px;
+      font-size: 1rem;
+      color: var(--white);
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: var(--black);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: var(--white);
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--white);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: var(--black);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+//body{
+    // #backgroud-container{
+    //     height: 500%;
+    //     width: 100%;
+    //     position: relative;
+    //     position: absolute;
+
+    //     #background{
+    //         margin-top: 80px;
+    //         margin-right: 40px;
+
+    //         #hero-background-line{
+    //             stroke-width: 8px;
+    //         }
+    //     }
+    // }
+//}

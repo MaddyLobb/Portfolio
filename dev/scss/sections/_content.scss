@@ -1,0 +1,105 @@
+#content {
+    width: 100vw;
+    height: 100%;
+    //overflow: hidden;
+
+    #about-svg-mobile-container{
+        max-height: 300px;
+        width: 100%;
+        // position: relative;
+        // position: absolute;
+
+        //max-width: 800px;
+        @include md{
+            display: none;
+        }
+
+        #about-svg-mobile{
+                margin-right: 16px;
+                margin-left: 16px;
+                height: 400px;
+        }
+    }
+
+    #about-svg-desktop-container{
+        display: none;
+
+        @include lg{
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            position: absolute;
+        }
+
+        #about-svg-desktop{
+                margin-right: 40px;
+                margin-left: 40px;
+        }
+    }
+
+    #about-content-container{
+        padding-top: 200px;
+
+        @include md{
+            display: grid;
+            grid-template-areas: "about-text-1 about-svg-1";
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 40px;
+        }
+    }
+
+    #about-svg-text-container{
+        width: 70%;
+        margin: 0px 40px 0px 150px;
+        // display: grid;
+        // grid-template-columns: auto;
+        // grid-area: "about-svg";
+
+        @include md{
+            grid-area: about-svg-1;
+        }
+
+        #about-svg-text{
+            //grid-area: about-svg-2;
+            padding-right: 40px;
+            //width: 50%;
+        }
+    }
+
+    #about-text-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include md{
+            grid-area: about-text-1;
+        }
+
+        #about-text{
+            margin: 50px 45px 20px;
+            //max-width: 450px;
+
+            p{
+                color: var(--white);
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+                font-size: rem-calc(16);
+                padding-bottom: 1em;
+                background-color: var(--black);
+                padding-left: 16px;
+                padding-right: 16px;
+        
+                @include md{
+                    font-size: rem-calc(20); 
+                }
+
+                @include lg{
+                   // max-width: 450px;
+                    min-width: 450px; 
+                }
+            }
+        }
+    }
+}
